@@ -5,9 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>TamARgotchi</title>
+
+    <!-- Import script and styling -->
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script>
+    <script src="main.js"></script>
   </head>
   <body>
-    <h1>Test</h1>
-    <script src="main.js"></script>
+    <a-scene embedded arjs>
+      <a-box position="0 0.5 0" material="color: yellow;"></a-box>
+      <a-marker-camera preset="hiro"></a-marker-camera>
+    </a-scene>
   </body>
 </html>
