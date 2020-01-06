@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+
+    <!-- Title -->
     <title>TamARgotchi</title>
 
     <!-- Import script and styling -->
@@ -13,9 +18,10 @@
     <script src="main.js"></script>
   </head>
   <body>
-    <a-scene embedded arjs>
+    <!-- Aframe code -->
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
       <a-box position="0 0.5 0" material="color: yellow;"></a-box>
-      <a-marker-camera preset="hiro"></a-marker-camera>
+      <a-marker-camera preset="hiro"> </a-marker-camera>
     </a-scene>
   </body>
 </html>
