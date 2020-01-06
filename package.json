@@ -1,7 +1,7 @@
 {
   "name": "tamargotchi",
   "version": "1.0.0",
-  "license": "MIT",
+  "private": true,
   "scripts": {
     "dev": "parcel src/index.html -d public",
     "build": "parcel build src/index.html -d public"
