@@ -22,6 +22,7 @@
   <body>
     <!-- Aframe code -->
     <a-scene>
+      <a-camera ar-raycaster raycaster cursor="fuse:false"> </a-camera>
       <!-- embedded arjs="sourceType: webcam; debugUIEnabled: false;" -->
       <a-assets>
         <a-asset-item id="model" src="baby_dino/scene.gltf"></a-asset-item>
@@ -33,6 +34,27 @@
         animation-mixer
       >
       </a-entity>
+      <a-ring
+        id="cursor"
+        radius-inner="0.1"
+        radius-outer="0.2"
+        color="teal"
+        position="1 -0 -6"
+        rotation="-90 0 0"
+      >
+      </a-ring>
     </a-scene>
+    <script type="text/javascript">
+      function onSceneLoaded() {
+        const raycaster = document.querySelector('[ar-raycaster]');
+        const cursor = document.querySelector('#cursor');
+        raycaster.addEventListener('raycaster-intersection', event => {
+          cursor.setAttribute('position', event.detail.intersections[0].point);
+        });
+      }
+
+      const scene = document.querySelector('a-scene');
+      scene.addEventListener('loaded', onSceneLoaded);
+    </script>
   </body>
 </html>
