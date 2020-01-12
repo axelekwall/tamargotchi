@@ -17,7 +17,6 @@
     <script src="https://google-ar.github.io/three.ar.js/dist/three.ar.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/cfe5f316/dist/aframe-extras.js"></script>
-    <script src="main.js"></script>
   </head>
   <body>
     <!-- Aframe code -->
@@ -28,6 +27,7 @@
         <a-asset-item id="model" src="baby_dino/scene.gltf"></a-asset-item>
       </a-assets>
       <a-entity
+        id="walker"
         gltf-model="#model"
         position="1 0 -6"
         scale="0.003 0.003 0.003"
@@ -44,17 +44,6 @@
       >
       </a-ring>
     </a-scene>
-    <script type="text/javascript">
-      function onSceneLoaded() {
-        const raycaster = document.querySelector('[ar-raycaster]');
-        const cursor = document.querySelector('#cursor');
-        raycaster.addEventListener('raycaster-intersection', event => {
-          cursor.setAttribute('position', event.detail.intersections[0].point);
-        });
-      }
-
-      const scene = document.querySelector('a-scene');
-      scene.addEventListener('loaded', onSceneLoaded);
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
