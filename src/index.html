@@ -28,9 +28,12 @@
       <a-assets>
         <a-asset-item id="model" src="https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/29355d23/2.0/CesiumMan/glTF-Binary/CesiumMan.glb"></a-asset-item>
       </a-assets>
-      <a-entity gltf-model="#model" rotation="0 -145 0"></a-entity>
-      <a-marker-camera preset="hiro" camera="far:100000; near:0.01">
-      </a-marker-camera>
+
+      <a-entity id="walker">
+        <a-entity gltf-model="#model" scale="1 1 1" rotation="0 -100 90"></a-entity>
+        <a-marker-camera preset="hiro" ></a-marker-camera>
+       
+      </a-entity>
     </a-scene>
   </body>
 </html>
