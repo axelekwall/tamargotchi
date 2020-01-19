@@ -14,10 +14,14 @@
     <!-- Import script and styling -->
     <link rel="stylesheet" href="styles.css" />
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="https://google-ar.github.io/three.ar.js/dist/three.ar.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script>
-    <script src="main.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/cfe5f316/dist/aframe-extras.js"></script>
+    <script src="main.js" defer></script>
   </head>
   <body>
+    <span class="hidden" id="feedback">Listening...</span>
+
     <!-- Aframe code -->
     <a-scene
       embedded
@@ -26,9 +30,14 @@
       renderer="logarithmicDepthBuffer: true;"
     >
       <a-assets>
-        <a-asset-item id="model" src="/dino.glb"></a-asset-item>
+        <a-asset-item id="model" src="/cute_dog/scene.gltf"></a-asset-item>
       </a-assets>
-      <a-entity gltf-model="#model" rotation="0 -145 0"></a-entity>
+      <a-entity
+        id="dogo"
+        gltf-model="#model"
+        scale="1.5 1.5 1.5"
+        animation-mixer="clip: standing; loop: repeat"
+      ></a-entity>
       <a-marker-camera preset="hiro" camera="far:100000; near:0.01">
       </a-marker-camera>
     </a-scene>
