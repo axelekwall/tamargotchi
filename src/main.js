@@ -41,13 +41,24 @@ const setFeedbackVisible = bool => {
   }
 };
 
+document.getElementById('text-input-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const input = document.getElementById('text-input').value;
+  console.log(input);
+  doAction(input.toLowerCase());
+});
+
 recognition.onresult = function(event) {
   var last = event.results.length - 1;
   var inAction = String(event.results[last][0].transcript);
   var action = inAction.toLowerCase();
 
   console.log('action:' + action);
+  console.log('Confidence: ' + event.results[0][0].confidence);
+  doAction(action);
+};
 
+const doAction = action => {
   if (action.includes('sit')) {
     newCommand('sitting');
   }
@@ -60,7 +71,6 @@ recognition.onresult = function(event) {
   if (action.includes('shake')) {
     newCommand('shake');
   }
-  console.log('Confidence: ' + event.results[0][0].confidence);
 };
 
 recognition.onspeechend = function() {

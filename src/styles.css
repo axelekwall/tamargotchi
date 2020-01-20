@@ -13,3 +13,19 @@ body {
 .hidden {
   display: none;
 }
+
+#form-submit {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+#text-input {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}

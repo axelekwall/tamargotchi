@@ -17,10 +17,24 @@
     <script src="https://google-ar.github.io/three.ar.js/dist/three.ar.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/cfe5f316/dist/aframe-extras.js"></script>
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
     <script src="main.js" defer></script>
   </head>
   <body>
     <span class="hidden" id="feedback">Listening...</span>
+    <form id="text-input-form">
+      <input
+        id="text-input"
+        type="text"
+        size="15"
+        required
+      /><input
+        type="submit"
+        value="Speak"
+        size="10"
+        id="form-submit"
+      />
+    </form>
 
     <!-- Aframe code -->
     <a-scene
