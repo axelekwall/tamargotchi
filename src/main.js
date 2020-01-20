@@ -43,7 +43,8 @@ const setFeedbackVisible = bool => {
 
 recognition.onresult = function(event) {
   var last = event.results.length - 1;
-  var action = String(event.results[last][0].transcript);
+  var inAction = String(event.results[last][0].transcript);
+  var action = inAction.toLowerCase();
 
   console.log('action:' + action);
 
